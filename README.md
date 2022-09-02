@@ -1,12 +1,13 @@
-Station Booking App
+**Station Booking App**
 
-Demo link:
-Access my site at: 
+**Technologies**
 
-Technologies
-I used React, mobx, typescript and Firebase
+I used for this project React, mobx, typescript and Firebase
 
-Setup
-download or clone the repository
-npm install
-npm run dev
+**Setup**
+
+1. Download or clone the repository
+
+2. npm install
+
+3. npm run dev
