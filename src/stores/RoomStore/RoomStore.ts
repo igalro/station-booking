@@ -3,8 +3,8 @@ import {seat1, seat2, seat3, seat4} from './constants';
 import {userActionsStore} from '../UserActionsStore/UserActionsStore';
 import {userStore} from '../UserStore/UserStore';
 import {ISeat} from '../../types';
-
-import {v4} from 'uuid';
+import {collection, doc, updateDoc} from 'firebase/firestore';
+import {firestore} from '../../utils';
 
 export class RoomStoreClass {
     id: string = 'room-1';
@@ -26,11 +26,15 @@ export class RoomStoreClass {
         this.seats = this.seats.filter(seat => seat.id !== seatId);
     };
 
-    addSeat = () => {
-        const seat: ISeat = {
-            id: v4(),
+    addSeat = async () => {
+        const roomsCollection = collection(firestore, 'rooms');
+        const getRoomDocument = doc(roomsCollection, this.id);
+        const newSeat: { schedule: {}; name: string; id: string } = {
+            id: `seat-${this.seats.length + 1}`,
+            name: `Seat ${this.seats.length + 1}`,
+            schedule: {},
         };
-        this.seats.push(seat);
+        await updateDoc(getRoomDocument, {seats: [...this.seats, newSeat]});
     };
 
     toggleSeatAvailability = (seatId: string) => {

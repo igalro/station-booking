@@ -9,11 +9,10 @@ export const SeatTableHeader: FC = observer(() => {
         <thead>
         <tr className={'text-left'}>
             <th >Name</th>
-            <th >Price</th>
             <th >Availability</th>
             {isAdmin() && (
                 <>
-                    <th >Remove</th>
+                    <th>Remove</th>
                 </>
             )}
         </tr>

@@ -19,7 +19,6 @@ export const SeatTableRow: FC<Props> = observer(({seat, isDisabled, isSeatAvaila
     return (
         <tr key={seat.id}>
             <SeatTableCell onChange={(value: string) => changeSeatField(seatId, 'name', value)} value={seat.name}/>
-            <SeatTableCell onChange={(value: string) => changeSeatField(seatId, 'price', value)} value={seat.price}/>
             <td>
                 <Button
                     onClick={() => toggleSeatAvailability(seatId)}

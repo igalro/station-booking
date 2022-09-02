@@ -1,7 +1,6 @@
 export interface ISeat {
     id: string;
     name?: string;
-    price?: number;
     schedule?: ISeatSchedule;
 }
 

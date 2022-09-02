@@ -37,7 +37,7 @@ export const SeatTable: FC = observer(() => {
                 })}
                 {isAdmin() && (
                     <tr className={'text-center'}>
-                        <td  colSpan={4}>
+                        <td  colSpan={3}>
                             <Button onClick={addSeat}>
                                 {'+ Add seat'}
                             </Button>
