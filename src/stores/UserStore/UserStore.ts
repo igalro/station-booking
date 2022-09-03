@@ -34,14 +34,11 @@ export class UserStoreClass {
         const q = query(usersCollection, orderBy('name'));
         onSnapshot(q, (snapshot) => {
             snapshot.docChanges().forEach((change) => {
-                console.log(change);
                 if (change.type === 'added') {
-                    debugger
                     const user = change.doc.data() as IUser;
                     this.allUsers.push(user);
                 }
                 if (change.type === 'modified') {
-                    debugger
                     const user = change.doc.data() as IUser;
                     const userIndex = this.allUsers.findIndex(u => u.id === user.id);
                     if (userIndex !== -1) {
@@ -49,7 +46,6 @@ export class UserStoreClass {
                     }
                 }
                 if (change.type === 'removed') {
-                    debugger
                     const user = change.doc.data() as IUser;
                     const userIndex = this.allUsers.findIndex(u => u.id === user.id);
                     if (userIndex !== -1) {

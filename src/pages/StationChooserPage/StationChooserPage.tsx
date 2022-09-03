@@ -2,7 +2,7 @@ import {Select} from '../../components';
 import {roomStore, userActionsStore} from '../../stores';
 import {observer} from 'mobx-react';
 import {daysOfWeek} from '../../utils';
-import {SeatTable} from './components/SeatTable';
+import {SeatsMap} from './components/SeatsMap';
 
 export const StationChooserPage = observer(() => {
     const {daySelected, selectDay} = userActionsStore;
@@ -20,7 +20,7 @@ export const StationChooserPage = observer(() => {
             </Select>
 
             <div className={'space-y-2 mt-5'}>
-                <SeatTable/>
+                <SeatsMap/>
             </div>
         </div>
     );

@@ -8,7 +8,7 @@ interface Props {
     onChange?: (value: string) => void;
 }
 
-export const SeatTableCell: FC<Props> = observer(({value, onChange}) => {
+export const SeatTableHeadline: FC<Props> = observer(({value, onChange}) => {
     const {isAdmin} = userStore;
 
     return (

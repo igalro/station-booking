@@ -1,15 +1,15 @@
 import {makeAutoObservable} from 'mobx';
-import {seat1, seat2, seat3, seat4} from './constants';
+import {seat1, seat2, seat3, seat4, seat5, seat6, seat7, seat8} from './constants';
 import {userActionsStore} from '../UserActionsStore/UserActionsStore';
 import {userStore} from '../UserStore/UserStore';
 import {ISeat} from '../../types';
-import {collection, doc, updateDoc} from 'firebase/firestore';
+import {collection, doc, updateDoc, setDoc} from 'firebase/firestore';
 import {firestore} from '../../utils';
 
 export class RoomStoreClass {
     id: string = 'room-1';
-    name: string = 'My Room';
-    seats: ISeat[] = [seat1, seat2, seat3, seat4];
+    name: string = 'Station Booking';
+    seats: ISeat[] = [seat1, seat2, seat3, seat4, seat5, seat6, seat7, seat8];
 
     constructor() {
         makeAutoObservable(this);
@@ -29,12 +29,12 @@ export class RoomStoreClass {
     addSeat = async () => {
         const roomsCollection = collection(firestore, 'rooms');
         const getRoomDocument = doc(roomsCollection, this.id);
-        const newSeat: { schedule: {}; name: string; id: string } = {
+        const newSeat: { id: string ; name: string ; schedule: {}} = {
             id: `seat-${this.seats.length + 1}`,
             name: `Seat ${this.seats.length + 1}`,
             schedule: {},
         };
-        await updateDoc(getRoomDocument, {seats: [...this.seats, newSeat]});
+        await setDoc(getRoomDocument, {seats: [...this.seats, newSeat]});
     };
 
     toggleSeatAvailability = (seatId: string) => {

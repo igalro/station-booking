@@ -48,3 +48,27 @@ export const seat4 = {
     name: 'Seat 4',
     schedule: schedule1,
 };
+
+export const seat5 = {
+    id: 'seat-5',
+    name: 'Seat 5',
+    schedule: schedule1,
+};
+
+export const seat6 = {
+    id: 'seat-6',
+    name: 'Seat 6',
+    schedule: schedule1,
+};
+
+export const seat7 = {
+    id: 'seat-7',
+    name: 'Seat 7',
+    schedule: schedule1,
+};
+
+export const seat8 = {
+    id: 'seat-8',
+    name: 'Seat 8',
+    schedule: schedule1,
+};

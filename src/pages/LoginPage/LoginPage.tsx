@@ -2,6 +2,7 @@ import {userActionsStore, userStore} from '../../stores';
 import {Button, Select} from '../../components';
 import {useNavigate} from 'react-router-dom';
 import {observer} from 'mobx-react';
+import Typography from "@mui/material/Typography";
 
 export const LoginPage = observer(() => {
     const {allUsers, login} = userStore;
@@ -16,6 +17,9 @@ export const LoginPage = observer(() => {
     return (
         <div className={'flex justify-center h-full'}>
             <div className={'flex self-center w-2/5 flex-col space-y-5'}>
+                <Typography variant="h2" component="div">
+                    Desk Booking
+                </Typography>
                 <div>
                     <Select
                         options={allUsers}
