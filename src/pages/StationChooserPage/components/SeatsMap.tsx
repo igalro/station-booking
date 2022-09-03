@@ -11,8 +11,7 @@ export const SeatsMap: FC = observer(() => {
     const {daySelected} = userActionsStore;
 
     return (
-        <div className={'space-y-2 mt-5'}>
-                <div className={styles.cards}>
+        <div className={styles.cards}>
                 {seats.map((seat) => {
                     const seatForSelectedDay = seat.schedule?.[daySelected];
                     const isSeatAvailable = seatForSelectedDay?.isAvailable;
@@ -34,15 +33,12 @@ export const SeatsMap: FC = observer(() => {
                     );
                 })}
                 {isAdmin() && (
-                    <tr className={'text-center'}>
-                        <td  colSpan={3}>
+                    <div className={styles.adminButton}>
                             <Button onClick={addSeat}>
                                 {'+ Add seat'}
                             </Button>
-                        </td>
-                    </tr>
+                    </div>
                 )}
-                </div>
         </div>
     );
 });

@@ -54,25 +54,5 @@ export const SeatTableCard: FC<Props> = observer(({seat, isDisabled, isSeatAvail
                             </Button>)}
                 </CardActions>
             </Card>
-
-        //     {/*<td>*/}
-        //     {/*    <Button*/}
-        //     {/*        onClick={() => toggleSeatAvailability(seatId)}*/}
-        //     {/*        disabled={isDisabled}*/}
-        //     {/*        className={isSeatAvailable ? 'bg-green-600' : 'bg-red-700'}*/}
-        //     {/*    >*/}
-        //     {/*        {buttonText}*/}
-        //     {/*    </Button>*/}
-        //     {/*</td>*/}
-        //     {/*{isAdmin() && (*/}
-        //     {/*    <td>*/}
-        //     {/*        <Button*/}
-        //     {/*            className={'bg-red-700'}*/}
-        //     {/*            onClick={() => removeSeat(seatId)}>*/}
-        //     {/*            {'Remove'}*/}
-        //     {/*        </Button>*/}
-        //     {/*    </td>*/}
-        //     {/*)}*/}
-
     ));
 });
