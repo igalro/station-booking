@@ -1,5 +1,5 @@
 import {Select} from '../../components';
-import {roomStore, userActionsStore} from '../../stores';
+import {roomStore, userActionsStore, userStore} from '../../stores';
 import {observer} from 'mobx-react';
 import {daysOfWeek} from '../../utils';
 import {SeatsMap} from './components/SeatsMap';

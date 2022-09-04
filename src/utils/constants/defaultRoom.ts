@@ -1,0 +1,1 @@
+export const defaultRoom = 'ID6pR3CfVAQi1gxLBS8a';

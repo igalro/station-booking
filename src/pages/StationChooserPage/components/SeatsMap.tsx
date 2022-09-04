@@ -7,38 +7,23 @@ import {Button} from '../../../components';
 
 export const SeatsMap: FC = observer(() => {
     const {seats, addSeat} = roomStore;
-    const {user, isAdmin} = userStore;
-    const {daySelected} = userActionsStore;
+    const { isAdmin} = userStore;
 
     return (
         <div className={styles.cards}>
-                {seats.map((seat) => {
-                    const seatForSelectedDay = seat.schedule?.[daySelected];
-                    const isSeatAvailable = seatForSelectedDay?.isAvailable;
-                    const isTakenByCurrentUser = seatForSelectedDay?.takenByUserId === user?.id;
-                    const isDisabled = isSeatAvailable === false && !isTakenByCurrentUser;
-                    const buttonText = (() => {
-                        if (isSeatAvailable) return 'Reserve';
-                        if (isTakenByCurrentUser) return 'Reserved';
-                        return 'Not available';
-                    })();
-                    return (
-                        <SeatTableCard
-                            key={seat.id}
-                            isSeatAvailable={isSeatAvailable}
-                            isDisabled={isDisabled}
-                            buttonText={buttonText}
-                            seat={seat}
-                        />
-                    );
-                })}
-                {isAdmin() && (
-                    <div className={styles.adminButton}>
-                            <Button onClick={addSeat}>
-                                {'+ Add seat'}
-                            </Button>
-                    </div>
-                )}
+            {seats.map((seat) => (
+                <SeatTableCard
+                    key={seat.id}
+                    seat={seat}
+                />
+            ))}
+            {isAdmin() && (
+                <div className={styles.adminButton}>
+                    <Button onClick={addSeat}>
+                        {'+ Add seat'}
+                    </Button>
+                </div>
+            )}
         </div>
     );
 });

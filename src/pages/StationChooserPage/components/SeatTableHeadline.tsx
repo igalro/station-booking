@@ -12,8 +12,8 @@ export const SeatTableHeadline: FC<Props> = observer(({value, onChange}) => {
     const {isAdmin} = userStore;
 
     return (
-        <td>
+        <div>
             {isAdmin() ? <Input onChange={onChange} value={value}/> : value}
-        </td>
+        </div>
     );
 });

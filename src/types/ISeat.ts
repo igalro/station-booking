@@ -4,11 +4,6 @@ export interface ISeat {
     schedule?: ISeatSchedule;
 }
 
-export interface ISeatScheduleStatus {
-    isAvailable: boolean;
-    takenByUserId?: string;
-}
-
 export interface ISeatSchedule {
-    [day: string]: ISeatScheduleStatus;
+    [day: string]: string | undefined;
 }
